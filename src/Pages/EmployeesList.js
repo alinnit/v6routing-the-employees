@@ -17,7 +17,7 @@ const EmployeesList = () => {
   const filteredUsers = userList.filter(value => (
    value.name.toLowerCase().includes(search.toLowerCase()) ||
    value.username.toLowerCase().includes(search.toLowerCase())
- ))
+  ))
 
   const fetchData = async () => {
     const response = await fetch("https://jsonplaceholder.typicode.com/users")
@@ -27,7 +27,7 @@ const EmployeesList = () => {
       return acc
     }, {})
     actions.set("tableData.users", dataObject)
-}
+  }
 
   return (
     <div className="App">
@@ -49,14 +49,14 @@ const EmployeesList = () => {
                   <th key={header}>
                     <button
                       onClick={() => {
-                    if (header !== sort.field) {
-                      actions.set("tableData.sort", { field: header, order: "ASC" })
-                    } else if (sort.order === "ASC") {
-                      actions.set("tableData.sort", { field: header, order: "DSC" })
-                    } else {
-                      actions.set("tableData.sort", {})
-                    }
-                  }}
+                        if (header !== sort.field) {
+                          actions.set("tableData.sort", { field: header, order: "ASC" })
+                        } else if (sort.order === "ASC") {
+                          actions.set("tableData.sort", { field: header, order: "DSC" })
+                        } else {
+                          actions.set("tableData.sort", {})
+                        }
+                      }}
                     >
                       {header}
                     </button>
@@ -67,9 +67,9 @@ const EmployeesList = () => {
                         : " 🔼"
                       }
                       </span>
-                  }
+                    }
                   </th>
-            ))}
+                ))}
               </tr>
             </thead>
             <tbody>
@@ -94,7 +94,7 @@ const EmployeesList = () => {
                   }}
                 />
               ))
-            }
+              }
             </tbody>
           </table>
           <button
